@@ -15,5 +15,6 @@ module.exports = function(selector, checkInterval, retryCnt) {
          : Rx.Observable.throw(new Error("DOM not exist"))
     })
     .mergeAll()
-    .retry(retryCnt);
+    .retry(retryCnt)
+    .take(1);
 }
